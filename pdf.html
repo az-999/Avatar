@@ -132,14 +132,30 @@
       height: 100%;
       overflow: visible;
     }
-    .cover .inner { z-index: 1; }
+    .cover-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 0;
+    }
+    .cover-logo {
+      display: block;
+      width: 112mm;
+      height: auto;
+      margin: 0 auto 6mm;
+    }
+    .cover .lead,
+    .cover .sub { margin-left: auto; margin-right: auto; }
+    .cover .facts { text-align: center; }
     .cover .bar {
       height: 2px;
       background: linear-gradient(90deg, transparent, rgba(214, 226, 255, 0.85) 18%, rgba(186, 160, 255, 0.7) 50%, rgba(150, 196, 255, 0.8) 78%, transparent);
     }
     .cover .kicker { color: #d7e4ff; }
     .cover .kicker span:last-child { color: #9eb4d4; }
-    .cover h1 .label { color: #c5d4ea; }
     .cover .lead { color: #f5f8fc; }
     .cover .sub { color: #aebdd2; }
     .cover .facts div:nth-child(1) small { color: #d5e2ff; }
@@ -583,8 +599,8 @@
     <div class="bar"></div>
     <div class="inner spread">
       <div class="kicker"><span>White Paper</span><span>Astana Hub</span></div>
-      <div>
-        <h1><span class="label">IT-компания</span>Аватар</h1>
+      <div class="cover-hero">
+        <img class="cover-logo" src="assets/logo.png" alt="Avatar">
         <p class="lead">Платформа для создания мультивселенных для людей новой Эпохи.</p>
         <p class="sub">«Глаз Бога» — интерфейс управления восприятием, очки дополненной реальности с нейросетью — и операционная система «Аватар».</p>
       </div>
