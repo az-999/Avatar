@@ -335,6 +335,23 @@
       font-weight: 600;
     }
     .card p, .principle p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+    .card.eye {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      padding: 4mm 0 0 5.5mm;
+      overflow: hidden;
+    }
+    .card.eye strong { margin-right: 4.5mm; }
+    .card.eye p { margin: 0 4.5mm 3.5mm 0; }
+    .card.eye img {
+      display: block;
+      width: 100%;
+      flex: 1 1 0;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center 42%;
+    }
 
     .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4mm; margin-top: 2mm; }
     .step {
@@ -397,6 +414,74 @@
       font-size: 11px;
       font-weight: 700;
       color: #d7c4ff;
+    }
+
+    .glasses {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3.5mm;
+      margin-top: 1mm;
+    }
+    .glass {
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top-width: 3px;
+      overflow: hidden;
+    }
+    .glass.g1 { border-top-color: #e24b4b; }
+    .glass.g2 { border-top-color: #e8843a; }
+    .glass.g3 { border-top-color: #3eae7a; }
+    .glass.g4 { border-top-color: #5b6ad6; }
+    .glass figure {
+      margin: 0;
+      flex: 1 1 auto;
+      min-height: 46mm;
+      background: #fff;
+    }
+    .glass img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+    .glass.crop img {
+      object-fit: cover;
+      object-position: 78% 58%;
+    }
+    .glass .body {
+      padding: 3mm 3.4mm 3.4mm;
+    }
+    .glass strong {
+      display: block;
+      margin-bottom: 1mm;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .glass .where {
+      margin: 0 0 1.8mm;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .glass p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+    .glass-note {
+      margin: 2.6mm 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
     }
 
     .k1 { color: #c8433c; }
@@ -570,9 +655,10 @@
       <h2>Производим и распространяем</h2>
       <p>Avatar — IT-компания новой Эпохи. Она производит и распространяет две неразделимые части одной системы.</p>
       <div class="cards">
-        <div class="card c1">
+        <div class="card c1 eye">
           <strong>«Глаз Бога»</strong>
           <p>Интерфейс управления восприятием: очки дополненной реальности с нейросетью. Телесная граница системы: человек остаётся в мире и управляет тем, как мир ему является.</p>
+          <img src="assets/glaz-boga.jpg" alt="«Глаз Бога»: очки и слой дополненной реальности поверх улицы">
         </div>
         <div class="card c4">
           <strong>Операционная система «Аватар»</strong>
@@ -695,10 +781,63 @@
     </div>
   </section>
 
+  <section class="page" id="glasses">
+    <div class="bar"></div>
+    <div class="inner">
+      <div class="kicker k6"><span>07 — Носители</span><span>Avatar</span></div>
+      <h2>Полноценные 3D-очки</h2>
+      <p class="lede">Объём на оба глаза и положение в комнате. На эти модели уже встаёт свой софт. Плоский экран перед глазами сюда не входит.</p>
+      <div class="glasses">
+        <article class="glass g1">
+          <figure>
+            <img src="assets/glasses-rayneo-x3-pro.png" alt="RayNeo X3 Pro">
+          </figure>
+          <div class="body">
+            <strong>RayNeo X3 Pro</strong>
+            <p class="where">Китай, бренд TCL. Продажа: rayneo.com</p>
+            <p>Автономные. Цветной волновод, объект стоит в комнате. Свой софт — Unity и Android. Около $1 000–1 300.</p>
+          </div>
+        </article>
+        <article class="glass g2">
+          <figure>
+            <img src="assets/glasses-xreal-one-pro.jpg" alt="XREAL One Pro">
+          </figure>
+          <div class="body">
+            <strong>XREAL One Pro</strong>
+            <p class="where">Китай, оптика в Уси. Продажа: xreal.com</p>
+            <p>Стерео на оба глаза. С камерой Eye — положение в пространстве. Свой софт — Unity, на телефоне или Beam Pro. $400–650.</p>
+          </div>
+        </article>
+        <article class="glass g3">
+          <figure>
+            <img src="assets/glasses-viture-luma-ultra.avif" alt="VITURE Luma Ultra">
+          </figure>
+          <div class="body">
+            <strong>VITURE Luma Ultra</strong>
+            <p class="where">Китай. Продажа: viture.com</p>
+            <p>Стерео и положение в пространстве. Свой софт на компьютере через C SDK: Linux, Windows, macOS, Android. Около $600.</p>
+          </div>
+        </article>
+        <article class="glass g4 crop">
+          <figure>
+            <img src="assets/glasses-digilens-argo.jpg" alt="DigiLens ARGO">
+          </figure>
+          <div class="body">
+            <strong>DigiLens ARGO</strong>
+            <p class="where">США. Продажа по запросу: digilens.com</p>
+            <p>Автономные промышленные очки. Волновод и трекинг комнаты. Свой софт — через программу для разработчиков.</p>
+          </div>
+        </article>
+      </div>
+      <p class="glass-note">Тот же класс: INMO Air3 (Китай, Unity и Android) и Snap Specs (США, Lens Studio).</p>
+      <div class="foot"><span>White Paper</span><span>10</span></div>
+    </div>
+  </section>
+
   <section class="page">
     <div class="bar"></div>
     <div class="inner">
-      <div class="kicker k2"><span>07 — Принципы</span><span>Avatar</span></div>
+      <div class="kicker k2"><span>08 — Принципы</span><span>Avatar</span></div>
       <h2>На чём стоит система</h2>
       <div class="principles">
         <div class="principle c1"><strong>Азъ</strong><p>Каждый человек — творец своего мира. Система служит его воле.</p></div>
@@ -708,14 +847,14 @@
         <div class="principle c5"><strong>Суверенность восприятия</strong><p>Человек управляет своим восприятием. Поле не подменяет его.</p></div>
         <div class="principle c6"><strong>Собственное производство</strong><p>Цех, завод чипов и дата-центры принадлежат контуру Avatar.</p></div>
       </div>
-      <div class="foot"><span>White Paper</span><span>10</span></div>
+      <div class="foot"><span>White Paper</span><span>11</span></div>
     </div>
   </section>
 
   <section class="page">
     <div class="bar"></div>
     <div class="inner">
-      <div class="kicker k1"><span>08 — Юрисдикция</span><span>Avatar</span></div>
+      <div class="kicker k1"><span>09 — Юрисдикция</span><span>Avatar</span></div>
       <h2>Astana Hub</h2>
       <div class="hub">
         <div class="hub-copy">
@@ -727,7 +866,7 @@
           <img src="assets/astanahub-aerial.jpg" alt="Комплекс Astana Hub: сфера Нур Алем и павильоны">
         </figure>
       </div>
-      <div class="foot"><span>White Paper</span><span>11</span></div>
+      <div class="foot"><span>White Paper</span><span>12</span></div>
     </div>
   </section>
 
@@ -744,7 +883,7 @@
         <p class="formula">Avatar — платформа для создания мультивселенных для людей новой эпохи.</p>
         <p class="sign">White Paper · юридическая регистрация Astana Hub</p>
       </div>
-      <div class="foot"><span>Astana Hub</span><span>12</span></div>
+      <div class="foot"><span>Astana Hub</span><span>13</span></div>
     </div>
   </section>
 </body>
